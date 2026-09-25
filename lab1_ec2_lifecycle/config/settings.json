@@ -1,0 +1,47 @@
+{
+  "variant": 3,
+  "region_name": "eu-central-1",
+  "instance_name": "cps-sensor-aggregator",
+  "instance_type": "t3.micro",
+
+  "ami_id": "auto",
+  "ami_lookup": {
+    "owner_id": "136693071363",
+    "name_pattern": "debian-12-amd64-*",
+    "architecture": "x86_64"
+  },
+  "ssh_user": "admin",
+
+  "volume_size_gb": 15,
+  "volume_type": "gp3",
+
+  "key_pair_name": "cps-lab1-v3-keypair",
+  "security_group_name": "cps-lab1-v3-mqtt-secgroup",
+
+  "ssh_ingress_cidr": "auto",
+  "mqtt_port": 1883,
+  "mqtt_ingress_cidr": "0.0.0.0/0",
+  "mqtt_username": "cps-sensor",
+
+  "localstack": {
+    "endpoint_url": "http://localhost:4566",
+    "ami_id": "ami-000003",
+    "ami_name": "debian-12-cps",
+    "docker_image": "debian:12"
+  },
+
+  "pricing": {
+    "compute_usd_per_hour": 0.012,
+    "storage_usd_per_gb_month": 0.0952,
+    "billing_min_seconds": 60,
+    "month_seconds": 2592000
+  },
+
+  "tags": {
+    "Project": "CyberPhysicalSystem",
+    "Environment": "Laboratory",
+    "ManagedBy": "Boto3-Automation",
+    "Owner": "Student-Variant-3",
+    "Role": "MQTT-Sensor-Aggregator"
+  }
+}

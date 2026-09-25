@@ -1,0 +1,85 @@
+{
+    "t_run_seconds": 10.8,
+    "t_life_seconds": 10.9,
+    "total_wait_seconds": 10.1,
+    "waits": {
+        "wait_running": 0.01,
+        "mqtt_connack_ok": 10.01,
+        "wait_stopped": 0.02,
+        "wait_running #2": 0.01,
+        "mqtt_connack_ok #2": 0.0,
+        "wait_terminated": 0.01
+    },
+    "P_compute_usd_per_hour": 0.012,
+    "P_storage_usd_per_gb_month": 0.0952,
+    "V_EBS_gb": 15,
+    "compute_cost_usd": 0.0002,
+    "storage_cost_usd": 6e-06,
+    "C_total_usd": 0.000206,
+    "monthly_24x7_estimate_usd": 10.19,
+    "note": "LocalStack: вартість умовна, розрахована за тарифами AWS для порівняння",
+    "timeline": [
+        {
+            "event": "run_instances",
+            "state": "pending",
+            "timestamp": "2026-09-24T07:53:21+00:00"
+        },
+        {
+            "event": "wait_running",
+            "state": "running",
+            "timestamp": "2026-09-24T07:53:21+00:00",
+            "wait_seconds": 0.01,
+            "polls": 1
+        },
+        {
+            "event": "mqtt_connack_ok",
+            "state": "running",
+            "timestamp": "2026-09-24T07:53:31+00:00",
+            "wait_seconds": 10.01,
+            "polls": 2
+        },
+        {
+            "event": "stop_instances",
+            "state": "stopped",
+            "timestamp": "2026-09-24T07:53:31+00:00"
+        },
+        {
+            "event": "wait_stopped",
+            "state": "stopped",
+            "timestamp": "2026-09-24T07:53:32+00:00",
+            "wait_seconds": 0.02,
+            "polls": 1
+        },
+        {
+            "event": "start_instances",
+            "state": "running",
+            "timestamp": "2026-09-24T07:53:32+00:00"
+        },
+        {
+            "event": "wait_running",
+            "state": "running",
+            "timestamp": "2026-09-24T07:53:32+00:00",
+            "wait_seconds": 0.01,
+            "polls": 1
+        },
+        {
+            "event": "mqtt_connack_ok",
+            "state": "running",
+            "timestamp": "2026-09-24T07:53:32+00:00",
+            "wait_seconds": 0.0,
+            "polls": 1
+        },
+        {
+            "event": "terminate_instances",
+            "state": "terminated",
+            "timestamp": "2026-09-24T07:53:32+00:00"
+        },
+        {
+            "event": "wait_terminated",
+            "state": "terminated",
+            "timestamp": "2026-09-24T07:53:32+00:00",
+            "wait_seconds": 0.01,
+            "polls": 1
+        }
+    ]
+}

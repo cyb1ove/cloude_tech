@@ -1,0 +1,45 @@
+{
+    "InstanceId": "i-615055d6914581910",
+    "InstanceType": "t3.micro",
+    "vCPU": 2,
+    "MemoryMiB": 1024,
+    "NetworkPerformance": "Up to 5 Gigabit",
+    "State": "running",
+    "ImageId": "ami-000003",
+    "PublicIpAddress": "54.214.15.127",
+    "PublicDnsName": "ec2-54-214-15-127.eu-central-1.localhost.localstack.cloud",
+    "PrivateIpAddress": "10.47.104.140",
+    "VpcId": "vpc-e3bca869c2d4adcee",
+    "SubnetId": "subnet-06e6fd179c6065a55",
+    "SecurityGroups": [
+        "sg-e85c696d7eaa44d65"
+    ],
+    "KeyName": "cps-lab1-v3-keypair",
+    "AvailabilityZone": "eu-central-1a",
+    "LaunchTime": "2026-09-24 07:53:20+00:00",
+    "Architecture": "arm64",
+    "VirtualizationType": "hvm",
+    "Hypervisor": "xen",
+    "RootDeviceName": "/dev/sda1",
+    "RootVolume": {
+        "VolumeId": "vol-27147d274d789fe98",
+        "Device": "/dev/sda1",
+        "SizeGiB": 15,
+        "VolumeType": "gp3",
+        "Iops": 3000,
+        "Throughput": null,
+        "Encrypted": true
+    },
+    "MqttEndpoint": "mqtt://127.0.0.1:2800",
+    "SshCommand": "ssh -p 35658 -i cps-lab1-v3-keypair.pem root@127.0.0.1",
+    "Backend": "LocalStack (Docker VM manager)",
+    "Tags": {
+        "Name": "cps-sensor-aggregator",
+        "Project": "CyberPhysicalSystem",
+        "Environment": "Laboratory",
+        "ManagedBy": "Boto3-Automation",
+        "Owner": "Student-Variant-3",
+        "Role": "MQTT-Sensor-Aggregator"
+    },
+    "Note": "Маніфест оновлено після циклу stop/start"
+}
