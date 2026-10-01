@@ -1,0 +1,74 @@
+# =============================================================================
+#  Docker-стенд data plane для режиму LocalStack (ЛБ2, варіант 3).
+#
+#  LocalStack емулює лише API (control plane): VPC, NAT і маршрути там існують
+#  як записи, але пакети ними не ходять. Цей стенд відтворює ту саму топологію
+#  з тими самими адресами, щоб реально перевірити ProxyJump, NAT та ізоляцію:
+#
+#    public  10.30.2.0/24  : bastion 10.30.2.10 (SSH опубліковано на 127.0.0.1:2222)
+#    private 10.30.50.0/24 : OPC UA worker 10.30.50.20 (НЕ опубліковано назовні)
+#    nat-gateway           : 10.30.2.254 / 10.30.50.254 — маршрутизатор VPC + NAT (MASQUERADE)
+#                            + фільтр, що відтворює правила Worker SG
+# =============================================================================
+name: cps-lab2-stand
+
+networks:
+  public:
+    name: cps-v3-public-10-30-2
+    ipam:
+      config:
+        - subnet: 10.30.2.0/24
+          gateway: 10.30.2.1
+  private:
+    name: cps-v3-private-10-30-50
+    ipam:
+      config:
+        - subnet: 10.30.50.0/24
+          gateway: 10.30.50.1
+
+services:
+  nat-gateway:
+    build: ./router
+    hostname: nat-gateway
+    cap_add: [NET_ADMIN]
+    sysctls:
+      net.ipv4.ip_forward: "1"
+      net.ipv4.conf.all.rp_filter: "0"
+    networks:
+      public:
+        ipv4_address: 10.30.2.254
+      private:
+        ipv4_address: 10.30.50.254
+    restart: unless-stopped
+
+  bastion:
+    build: ./bastion
+    hostname: ip-10-30-2-10
+    cap_add: [NET_ADMIN]
+    ports:
+      - "127.0.0.1:2222:22"
+    volumes:
+      - ../cps-lab2-key.pem.pub:/keys/authorized_keys:ro
+    networks:
+      public:
+        ipv4_address: 10.30.2.10
+    depends_on: [nat-gateway]
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: ..
+      dockerfile: dataplane/worker/Dockerfile
+    hostname: ip-10-30-50-20
+    cap_add: [NET_ADMIN]
+    environment:
+      OPCUA_PORT: "4840"
+      OPCUA_PATH: "/cps/opcua/"
+      OPCUA_NS: "urn:cps:lab2:variant3"
+    volumes:
+      - ../cps-lab2-key.pem.pub:/keys/authorized_keys:ro
+    networks:
+      private:
+        ipv4_address: 10.30.50.20
+    depends_on: [nat-gateway]
+    restart: unless-stopped

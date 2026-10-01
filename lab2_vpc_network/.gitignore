@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pem
+*.pem.pub
+.localstack_token
+output/*.json
+output/*.txt
+output/ssh_config
+output/known_hosts

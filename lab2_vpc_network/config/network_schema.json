@@ -1,0 +1,64 @@
+{
+  "variant": 3,
+  "region": "eu-central-1",
+
+  "vpc_cidr": "10.30.0.0/16",
+  "vpc_name": "cps-v3-opcua-vpc",
+  "public_subnet": {
+    "cidr": "10.30.2.0/24",
+    "az": "eu-central-1a",
+    "name": "cps-v3-public-subnet-1a"
+  },
+  "private_subnet": {
+    "cidr": "10.30.50.0/24",
+    "az": "eu-central-1a",
+    "name": "cps-v3-private-subnet-1a"
+  },
+
+  "ami_id": "auto",
+  "ami_lookup": {
+    "owner_id": "099720109477",
+    "name_pattern": "ubuntu/images/hvm-ssd*/ubuntu-jammy-22.04-amd64-server-*"
+  },
+  "ssh_user": "ubuntu",
+  "instance_type": "t3.micro",
+  "key_name": "cps-lab2-key",
+
+  "bastion": { "name": "cps-v3-bastion", "private_ip": "10.30.2.10" },
+  "worker":  { "name": "cps-v3-opcua-server", "private_ip": "10.30.50.20" },
+
+  "service": {
+    "name": "OPC UA Industrial Server",
+    "port": 4840,
+    "endpoint_path": "/cps/opcua/",
+    "namespace_uri": "urn:cps:lab2:variant3"
+  },
+
+  "ssh_ingress_cidr": "auto",
+  "enable_nacl": true,
+
+  "pricing": {
+    "instance_usd_per_hour": 0.012,
+    "nat_usd_per_hour": 0.052,
+    "nat_usd_per_gb": 0.052,
+    "public_ipv4_usd_per_hour": 0.005
+  },
+
+  "localstack": {
+    "endpoint_url": "http://localhost:4566"
+  },
+  "stand": {
+    "bastion_ssh_host": "127.0.0.1",
+    "bastion_ssh_port": 2222,
+    "nat_private_ip": "10.30.50.254",
+    "compose_file": "dataplane/docker-compose.yml"
+  },
+
+  "tags": {
+    "Project": "CyberPhysicalSystem",
+    "Environment": "Laboratory",
+    "Lab": "LB2-VPC-Bastion",
+    "ManagedBy": "Boto3-Automation",
+    "Owner": "Student-Variant-3"
+  }
+}
