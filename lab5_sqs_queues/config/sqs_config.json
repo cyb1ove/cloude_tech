@@ -1,0 +1,21 @@
+{
+  "variant": 3,
+  "region": "eu-central-1",
+  "queue_prefix": "cps-robot-telemetry",
+  "telemetry_type": "Кутові енкодери маніпулятора (6 суглобів)",
+  "visibility_timeout_seconds": 10,
+  "message_retention_seconds": 345600,
+  "dlq_retention_seconds": 1209600,
+  "max_receive_count": 2,
+  "receive_wait_time_seconds": 2,
+  "total_messages": 1000,
+  "poison_pill_percentage": 5,
+  "consumer_threads": 8,
+  "robots": 4,
+  "outage_seconds": 5,
+  "processing_time_ms": {"mean": 12, "stddev": 4},
+  "empty_polls_to_stop": 2,
+  "max_waves": 6,
+  "seed": 3,
+  "tags": {"Project": "CyberPhysicalSystem", "Environment": "Laboratory", "Lab": "LB5-SQS", "Owner": "Student-Variant-3"}
+}
