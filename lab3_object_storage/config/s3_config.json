@@ -1,0 +1,58 @@
+{
+  "variant": 3,
+  "region": "eu-central-1",
+  "bucket_prefix": "cps-smart-meter",
+  "enable_versioning": true,
+  "encryption_algorithm": "AES256",
+  "kms_key_id": null,
+  "block_public_access": true,
+  "enforce_tls_policy": true,
+  "presigned_url_expiration_seconds": 300,
+
+  "sensor": {
+    "device_id": "CPS-SMART-METER-03",
+    "sensor_type": "smart_electricity_meter",
+    "packet_count": 20,
+    "packet_size_bytes": 2048,
+    "key_template": "telemetry/year={year}/month={month}/day={day}/device_{device}_seq{seq:04d}.json"
+  },
+
+  "lifecycle_rules": {
+    "rule_id": "ArchiveTelemetryRule",
+    "prefix": "telemetry/",
+    "transition_ia_days": 60,
+    "transition_glacier_days": 120,
+    "expiration_days": 730,
+    "noncurrent_glacier_days": 30,
+    "noncurrent_expiration_days": 90,
+    "abort_multipart_days": 7
+  },
+
+  "cost_model": {
+    "devices": 1000,
+    "interval_minutes": 15,
+    "months": 24,
+    "prices_usd": {
+      "STANDARD": 0.0245,
+      "STANDARD_IA": 0.0135,
+      "GLACIER": 0.0045,
+      "DEEP_ARCHIVE": 0.0018,
+      "put_per_1000": 0.0054,
+      "get_per_1000": 0.00043,
+      "transition_ia_per_1000": 0.01,
+      "transition_glacier_per_1000": 0.036,
+      "retrieval_glacier_per_gb": 0.01
+    },
+    "ia_min_billable_kb": 128,
+    "glacier_overhead_kb": 40,
+    "transition_min_object_kb": 128
+  },
+
+  "tags": {
+    "Project": "CyberPhysicalSystem",
+    "Environment": "Laboratory",
+    "Lab": "LB3-S3",
+    "DataClass": "SmartMeterTelemetry",
+    "Owner": "Student-Variant-3"
+  }
+}

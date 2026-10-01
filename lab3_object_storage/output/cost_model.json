@@ -1,0 +1,953 @@
+{
+  "assumptions": {
+    "devices": 1000,
+    "interval_minutes": 15,
+    "packets_per_month": 2880000,
+    "packet_kb": 2.0,
+    "aggregate_kb": 192.0,
+    "transition_min_object_kb": 128,
+    "prices_usd": {
+      "STANDARD": 0.0245,
+      "STANDARD_IA": 0.0135,
+      "GLACIER": 0.0045,
+      "DEEP_ARCHIVE": 0.0018,
+      "put_per_1000": 0.0054,
+      "get_per_1000": 0.00043,
+      "transition_ia_per_1000": 0.01,
+      "transition_glacier_per_1000": 0.036,
+      "retrieval_glacier_per_gb": 0.01
+    }
+  },
+  "monthly": [
+    {
+      "month": 1,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 5.493,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 0.1346,
+        "put": 15.552,
+        "total": 15.6866
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 5.859,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 0.1436,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 0.0,
+        "total": 17.096
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 5.493,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 0.1346,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 0.0,
+        "total": 0.2966
+      }
+    },
+    {
+      "month": 2,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 10.986,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 0.2692,
+        "put": 15.552,
+        "total": 15.8212
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 11.353,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 0.2781,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 0.0,
+        "total": 17.2305
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 10.986,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 0.2692,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 0.0,
+        "total": 0.4312
+      }
+    },
+    {
+      "month": 3,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 16.479,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 0.4037,
+        "put": 15.552,
+        "total": 15.9557
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 11.353,
+          "STANDARD_IA": 5.493,
+          "GLACIER": 0.0
+        },
+        "storage": 0.3523,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 0.3,
+        "total": 17.6047
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 10.986,
+          "STANDARD_IA": 5.493,
+          "GLACIER": 0.0
+        },
+        "storage": 0.3433,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 0.3,
+        "total": 0.8053
+      }
+    },
+    {
+      "month": 4,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 21.973,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 0.5383,
+        "put": 15.552,
+        "total": 16.0903
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 11.353,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 0.0
+        },
+        "storage": 0.4265,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 0.3,
+        "total": 17.6789
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 10.986,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 0.0
+        },
+        "storage": 0.4175,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 0.3,
+        "total": 0.8795
+      }
+    },
+    {
+      "month": 5,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 27.466,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 0.6729,
+        "put": 15.552,
+        "total": 16.2249
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 11.581,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 6.409
+        },
+        "storage": 0.4609,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 18.7933
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 11.215,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 6.409
+        },
+        "storage": 0.4519,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 1.9939
+      }
+    },
+    {
+      "month": 6,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 32.959,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 0.8075,
+        "put": 15.552,
+        "total": 16.3595
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 11.81,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 12.817
+        },
+        "storage": 0.4953,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 18.8277
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 11.444,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 12.817
+        },
+        "storage": 0.4864,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.0284
+      }
+    },
+    {
+      "month": 7,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 38.452,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 0.9421,
+        "put": 15.552,
+        "total": 16.4941
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 12.039,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 19.226
+        },
+        "storage": 0.5298,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 18.8622
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 11.673,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 19.226
+        },
+        "storage": 0.5208,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.0628
+      }
+    },
+    {
+      "month": 8,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 43.945,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 1.0767,
+        "put": 15.552,
+        "total": 16.6287
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 12.268,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 25.635
+        },
+        "storage": 0.5642,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 18.8966
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 11.902,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 25.635
+        },
+        "storage": 0.5553,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.0973
+      }
+    },
+    {
+      "month": 9,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 49.438,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 1.2112,
+        "put": 15.552,
+        "total": 16.7632
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 12.497,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 32.043
+        },
+        "storage": 0.5987,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 18.9311
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 12.131,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 32.043
+        },
+        "storage": 0.5897,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.1317
+      }
+    },
+    {
+      "month": 10,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 54.932,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 1.3458,
+        "put": 15.552,
+        "total": 16.8978
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 12.726,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 38.452
+        },
+        "storage": 0.6331,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 18.9655
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 12.36,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 38.452
+        },
+        "storage": 0.6242,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.1662
+      }
+    },
+    {
+      "month": 11,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 60.425,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 1.4804,
+        "put": 15.552,
+        "total": 17.0324
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 12.955,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 44.861
+        },
+        "storage": 0.6676,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 19.0
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 12.589,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 44.861
+        },
+        "storage": 0.6586,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.2006
+      }
+    },
+    {
+      "month": 12,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 65.918,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 1.615,
+        "put": 15.552,
+        "total": 17.167
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 13.184,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 51.27
+        },
+        "storage": 0.702,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 19.0344
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 12.817,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 51.27
+        },
+        "storage": 0.6931,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.2351
+      }
+    },
+    {
+      "month": 13,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 71.411,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 1.7496,
+        "put": 15.552,
+        "total": 17.3016
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 13.412,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 57.678
+        },
+        "storage": 0.7365,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 19.0689
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 13.046,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 57.678
+        },
+        "storage": 0.7275,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.2695
+      }
+    },
+    {
+      "month": 14,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 76.904,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 1.8842,
+        "put": 15.552,
+        "total": 17.4362
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 13.641,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 64.087
+        },
+        "storage": 0.7709,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 19.1033
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 13.275,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 64.087
+        },
+        "storage": 0.7619,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.3039
+      }
+    },
+    {
+      "month": 15,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 82.397,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 2.0187,
+        "put": 15.552,
+        "total": 17.5707
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 13.87,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 70.496
+        },
+        "storage": 0.8054,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 19.1378
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 13.504,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 70.496
+        },
+        "storage": 0.7964,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.3384
+      }
+    },
+    {
+      "month": 16,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 87.891,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 2.1533,
+        "put": 15.552,
+        "total": 17.7053
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 14.099,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 76.904
+        },
+        "storage": 0.8398,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 19.1722
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 13.733,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 76.904
+        },
+        "storage": 0.8308,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.3728
+      }
+    },
+    {
+      "month": 17,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 93.384,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 2.2879,
+        "put": 15.552,
+        "total": 17.8399
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 14.328,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 83.313
+        },
+        "storage": 0.8743,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 19.2067
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 13.962,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 83.313
+        },
+        "storage": 0.8653,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.4073
+      }
+    },
+    {
+      "month": 18,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 98.877,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 2.4225,
+        "put": 15.552,
+        "total": 17.9745
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 14.557,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 89.722
+        },
+        "storage": 0.9087,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 19.2411
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 14.191,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 89.722
+        },
+        "storage": 0.8997,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.4417
+      }
+    },
+    {
+      "month": 19,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 104.37,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 2.5571,
+        "put": 15.552,
+        "total": 18.1091
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 14.786,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 96.13
+        },
+        "storage": 0.9432,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 19.2756
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 14.42,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 96.13
+        },
+        "storage": 0.9342,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.4762
+      }
+    },
+    {
+      "month": 20,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 109.863,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 2.6917,
+        "put": 15.552,
+        "total": 18.2437
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 15.015,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 102.539
+        },
+        "storage": 0.9776,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 19.31
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 14.648,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 102.539
+        },
+        "storage": 0.9686,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.5106
+      }
+    },
+    {
+      "month": 21,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 115.356,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 2.8262,
+        "put": 15.552,
+        "total": 18.3782
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 15.244,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 108.948
+        },
+        "storage": 1.012,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 19.3444
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 14.877,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 108.948
+        },
+        "storage": 1.0031,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.5451
+      }
+    },
+    {
+      "month": 22,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 120.85,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 2.9608,
+        "put": 15.552,
+        "total": 18.5128
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 15.472,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 115.356
+        },
+        "storage": 1.0465,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 19.3789
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 15.106,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 115.356
+        },
+        "storage": 1.0375,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.5795
+      }
+    },
+    {
+      "month": 23,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 126.343,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 3.0954,
+        "put": 15.552,
+        "total": 18.6474
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 15.701,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 121.765
+        },
+        "storage": 1.0809,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 19.4133
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 15.335,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 121.765
+        },
+        "storage": 1.072,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.614
+      }
+    },
+    {
+      "month": 24,
+      "A": {
+        "volume_gb": {
+          "STANDARD": 131.836,
+          "STANDARD_IA": 0.0,
+          "GLACIER": 0.0
+        },
+        "storage": 3.23,
+        "put": 15.552,
+        "total": 18.782
+      },
+      "B": {
+        "volume_gb": {
+          "STANDARD": 15.93,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 128.174
+        },
+        "storage": 1.1154,
+        "put": 15.714,
+        "get": 1.2384,
+        "transitions": 1.38,
+        "total": 19.4478
+      },
+      "C": {
+        "volume_gb": {
+          "STANDARD": 15.564,
+          "STANDARD_IA": 10.986,
+          "GLACIER": 128.174
+        },
+        "storage": 1.1064,
+        "put": 0.162,
+        "get": 0.0,
+        "transitions": 1.38,
+        "total": 2.6484
+      }
+    }
+  ],
+  "summary": {
+    "A_year1": 197.12,
+    "A_year2": 216.5,
+    "B_year1": 220.92,
+    "B_year2": 231.1,
+    "C_year1": 19.33,
+    "C_year2": 29.51,
+    "A_month24": {
+      "volume_gb": {
+        "STANDARD": 131.836,
+        "STANDARD_IA": 0.0,
+        "GLACIER": 0.0
+      },
+      "storage": 3.23,
+      "put": 15.552,
+      "total": 18.782
+    },
+    "B_month24": {
+      "volume_gb": {
+        "STANDARD": 15.93,
+        "STANDARD_IA": 10.986,
+        "GLACIER": 128.174
+      },
+      "storage": 1.1154,
+      "put": 15.714,
+      "get": 1.2384,
+      "transitions": 1.38,
+      "total": 19.4478
+    },
+    "C_month24": {
+      "volume_gb": {
+        "STANDARD": 15.564,
+        "STANDARD_IA": 10.986,
+        "GLACIER": 128.174
+      },
+      "storage": 1.1064,
+      "put": 0.162,
+      "get": 0.0,
+      "transitions": 1.38,
+      "total": 2.6484
+    }
+  }
+}

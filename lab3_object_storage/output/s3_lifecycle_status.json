@@ -1,0 +1,135 @@
+{
+  "bucket": "cps-smart-meter-a1b74f01",
+  "region": "eu-central-1",
+  "backend": "LocalStack",
+  "created_at": "2026-09-24T21:20:50+00:00",
+  "posture": {
+    "public_access_block": {
+      "BlockPublicAcls": true,
+      "IgnorePublicAcls": true,
+      "BlockPublicPolicy": true,
+      "RestrictPublicBuckets": true
+    },
+    "versioning": "Enabled",
+    "encryption": "AES256",
+    "policy_statements": [],
+    "ownership": "BucketOwnerEnforced",
+    "lifecycle": [
+      {
+        "Expiration": {
+          "Days": 730
+        },
+        "ID": "ArchiveTelemetryRule",
+        "Filter": {
+          "Prefix": "telemetry/"
+        },
+        "Status": "Enabled",
+        "Transitions": [
+          {
+            "Days": 60,
+            "StorageClass": "STANDARD_IA"
+          },
+          {
+            "Days": 120,
+            "StorageClass": "GLACIER"
+          }
+        ],
+        "NoncurrentVersionTransitions": [
+          {
+            "NoncurrentDays": 30,
+            "StorageClass": "GLACIER"
+          }
+        ],
+        "NoncurrentVersionExpiration": {
+          "NoncurrentDays": 90
+        },
+        "AbortIncompleteMultipartUpload": {
+          "DaysAfterInitiation": 7
+        }
+      }
+    ]
+  },
+  "security_tests": [
+    [
+      "S1",
+      "Анонімний GET без підпису",
+      "WARN",
+      "HTTP 200 — емулятор не перевіряє підписи/авторизацію (в AWS очікується 403)"
+    ],
+    [
+      "S2",
+      "Presigned GET + SHA-256 + SSE",
+      "PASS",
+      "HTTP 200, sha256 збігається, x-amz-server-side-encryption=AES256, x-amz-version-id=AaDVSuiXbeRi…"
+    ],
+    [
+      "S3",
+      "Прострочений URL (TTL = 1 с)",
+      "WARN",
+      "HTTP 200 — емулятор не перевіряє підписи/авторизацію (в AWS очікується 403)"
+    ],
+    [
+      "S4",
+      "Змінений X-Amz-Signature",
+      "WARN",
+      "HTTP 200 — емулятор не перевіряє підписи/авторизацію (в AWS очікується 403)"
+    ],
+    [
+      "S5",
+      "PUT з непідписаним Content-Type",
+      "WARN",
+      "HTTP 200 — емулятор не перевіряє підписи/авторизацію (в AWS очікується 403)"
+    ],
+    [
+      "S6",
+      "Presigned GET по HTTP (без TLS)",
+      "SKIP",
+      "LocalStack працює лише по HTTP"
+    ]
+  ],
+  "object_count": 20,
+  "version_count": 21,
+  "avg_upload_ms": 7.8,
+  "cost_summary": {
+    "A_year1": 197.12,
+    "A_year2": 216.5,
+    "B_year1": 220.92,
+    "B_year2": 231.1,
+    "C_year1": 19.33,
+    "C_year2": 29.51,
+    "A_month24": {
+      "volume_gb": {
+        "STANDARD": 131.836,
+        "STANDARD_IA": 0.0,
+        "GLACIER": 0.0
+      },
+      "storage": 3.23,
+      "put": 15.552,
+      "total": 18.782
+    },
+    "B_month24": {
+      "volume_gb": {
+        "STANDARD": 15.93,
+        "STANDARD_IA": 10.986,
+        "GLACIER": 128.174
+      },
+      "storage": 1.1154,
+      "put": 15.714,
+      "get": 1.2384,
+      "transitions": 1.38,
+      "total": 19.4478
+    },
+    "C_month24": {
+      "volume_gb": {
+        "STANDARD": 15.564,
+        "STANDARD_IA": 10.986,
+        "GLACIER": 128.174
+      },
+      "storage": 1.1064,
+      "put": 0.162,
+      "get": 0.0,
+      "transitions": 1.38,
+      "total": 2.6484
+    }
+  }
+}
